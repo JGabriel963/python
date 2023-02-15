@@ -4,6 +4,9 @@ def fatorial(n, show=False):
         if show:
             print(c, end='')
             if c > 1:
+                print(' -> ', end='')
+            else:
+                print(' = ', end='')
         f *= c
     return f
 
