@@ -1,3 +1,4 @@
+from random import randint
 class Paciente:
     def __init__(self, id_paciente, nome, dt_nascimento, contato):
         self.__id_paciente = id_paciente
@@ -42,8 +43,48 @@ class Consulta:
     def __str__(self):
         return f'Id: {self.__id_consulta}\nPaciente: {self.paciente.nome}\nMédico: {self.medico.nome}\nData: {self.data}'
 
+class App:
+    def __init__(self):
+        self.consultas = []
+
+    def marcar_consulta(self, medico, paciente, data):
+        consulta = Consulta(randint(100, 999), medico, paciente, data)
+        self.consultas.append(consulta)
+
+    def ver_consultas(self):
+        for i, k in enumerate(self.consultas):
+            print(f'Consulta {i + 1}')
+            print(k)
+        return
+
 
 maria = Paciente(12454367, 'Maria', '14/09/2005', 86988776655)
 joao = Medico(23875894, 'João', 3467, 'Ginecologista')
-consulta = Consulta(5670, joao, maria, '05/05/2023')
-print(consulta)
+
+miguel = Paciente(23454, 'Miguel', '26/01/2005', 0)
+pamela = Medico(7834, 'Pamela', 876, 'Dentista')
+
+
+app = App()
+app.marcar_consulta(joao, maria, '23/09/2023')
+app.marcar_consulta(pamela, miguel, '13/09/2023')
+app.ver_consultas()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
