@@ -95,16 +95,21 @@ class ControleSeguro:
         print('Erro :(')
 
     def relatorio(self):
+        totv = 0
         print('-=' * 15)
         print("(Seguros de Vida)")
         for i in self.seguro_vida:
             print(i)
+            totv += i.calcular_valor()
         print('-=' * 15)
         print("(Seguros de Automóveis)")
         for i in self.seguro_automovel:
             print(i)
+            totv += i.calcular_valor()
         print('-=' * 15)
-        print(f'Quantidade: SV {len(self.seguro_vida)} SA: {len(self.seguro_automovel)}')
+        print(f'Quantidade: SV {len(self.seguro_vida)}, SA: {len(self.seguro_automovel)}, Total de valores: {totv}')
+
+
 
 control = ControleSeguro()
 joao = Cliente(2343, 'João', 28)
