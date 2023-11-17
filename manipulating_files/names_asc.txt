@@ -1,0 +1,15 @@
+framework=Django
+framework=NextJS
+framework=React
+framework=Spring Boot
+language=Django
+language=Java
+language=Java
+language=JavaScript
+language=NextJS
+language=Python
+language=Python
+language=Ruby
+language=Ruby on Rails
+language=Ruby on Rails
+language=Typescript
