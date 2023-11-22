@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+<h2 class="text-center">Lista de Filmes</h2>
+<hr />
+<div class="row">
+  {% for movie in movies %}
+  <div class="col-md-3">
+    <div class="card" style="width: 18rem">
+      <img
+        src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}"
+        class="card-img-top"
+        alt=""
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{movie.title}}</h5>
+        <p class="card-text">{{movie.overview}}</p>
+        <hr />
+        <h4>
+          Nota Média
+          <span class="badge bg-secondary"> {{movie.vote_average}} </span>
+        </h4>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}
