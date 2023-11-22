@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<h2 style="text-align: center">Integrando HTML no Flask!</h2>
+<hr />
+<form class="form-group" action="{{url_for('main')}}" method="POST">
+  <label for="content">Conteúdo:</label>
+  <input class="form-control" type="text" name="content" id="content" />
+  <button class="btn btn-success mt-2">Adicionar</button>
+</form>
+<h3>Lista de Conteúdos:</h3>
+<ol class="list-group list-group-numbered">
+  {% for content in contents %}
+  <li class="list-group-item">{{ content }}</li>
+  {% endfor %}
+</ol>
+
+{%endblock content%}
