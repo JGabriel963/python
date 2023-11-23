@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <h2 class="text-center">Lista de Livros</h2>
 <hr />
+<a href="{{url_for('add_book')}}" class="btn btn-secondary">Adicionar Livro</a>
 <br /><br />
 <table class="table table-bordered table-hover">
   <thead class="table-dark">
@@ -9,6 +10,7 @@
       <th>Nome</th>
       <th>Descrição</th>
       <th>Valor</th>
+      <th>Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -18,8 +20,23 @@
       <td>{{book.name}}</td>
       <td>{{book.description}}</td>
       <td>{{book.value}}</td>
+      <td>
+        <a href="{{book.id}}/update_book" class="btn btn-secondary btn-xs"
+          >Editar</a
+        >
+        <a
+          href="{{book.id}}/remove_book"
+          class="btn btn-danger btn-xs"
+          onclick="return confirm('Deseja exclui esse registro?')"
+          >Excluir</a
+        >
+      </td>
     </tr>
     {% endfor %}
   </tbody>
 </table>
-{% endblock content %}
+{% if books.has_prev %}
+<a href="{{url_for('list_books', page=books.prev_num)}}">Livros Anteriores</a>
+{% else %} Livros Listados {% endif %} {% if books.has_next %}
+<a href="{{url_for('list_books', page=books.next_num)}}">Próximos Livros</a>
+{% else %} Livros Listados {% endif %} {% endblock content %}
