@@ -39,7 +39,7 @@ print(df.groupby('Cargo')['Salario'].mean())
 df.plot(
     kind='bar',
     x="Nome",
-    y="Salarioc",
+    y="Salario",
     title="Salário dos Funcionários",
     rot=45
 )
