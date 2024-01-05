@@ -48,3 +48,14 @@ Um valor próximo a 0 indica uma correlação fraca.
 
 correlacao = df['Unidades'].corr(df['PrecoUnidade'])
 print(correlacao)
+
+#6-Exportando para CSV
+vendas_region = df.groupby('Regiao')['Unidades'].sum()
+print(type(vendas_region))
+
+#Converter Seres em Dataframe
+vendas_region_df = vendas_region.reset_index()
+vendas_region_df.columns = ["Região", "TotalUnidadesVendidas"]
+
+print(type(vendas_region_df))
+vendas_region_df.to_csv('data/vendas_regiao.csv', index=False)
