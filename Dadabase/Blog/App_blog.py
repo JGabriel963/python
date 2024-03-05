@@ -1,4 +1,4 @@
-from Blog import show_menu, add_post, add_user, query_users_posts
+from Blog.Blog import show_menu, add_post, add_user, query_users_posts
 
 while True:
     show_menu()

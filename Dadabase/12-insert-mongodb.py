@@ -6,11 +6,11 @@ mydb = client.obcblog
 mycol = mydb.posts
 
 post1 = {
-    "title": "Web Scraping",
-    "category": "Automação",
+    "title": "FastApi",
+    "category": "Data Analysis",
     "author": {
-        "name": "Fulano",
-        "email": "fulano@mail.com"
+        "name": "Joel",
+        "email": "joel@mail.com"
     }
 }
 

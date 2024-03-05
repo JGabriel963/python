@@ -1,4 +1,4 @@
-from conect_orm import Base
+from Blog.conect_orm import Base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 

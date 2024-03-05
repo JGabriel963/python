@@ -1,6 +1,6 @@
-from conect_orm import Base, engine, session
-from User import User
-from Post import Post
+from Blog.conect_orm import Base, engine, session
+from Blog.User import User
+from Blog.Post import Post
 
 # Criar as tabelas
 Base.metadata.create_all(engine)
