@@ -16,3 +16,5 @@ for game in games:
 conn.commit()
 print("Dados inseridos com sucesso!")
 conn.close()
+
+ 
