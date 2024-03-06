@@ -1,6 +1,7 @@
 from pathlib import Path
 
-p1 = Path('data', 'teste.txt')
+p1 = Path('dados', 'teste.txt')
+
 print(p1)
 print(type(p1))
 print(p1.name)
@@ -12,5 +13,5 @@ if p1.exists():
     with open(p1, 'r', encoding='utf-8') as file:
         print(file.read())
 
-p2 = Path('data')
+p2 = Path('dados')
 print(list(p2.iterdir()))
