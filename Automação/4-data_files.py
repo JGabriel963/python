@@ -1,0 +1,15 @@
+from pathlib import Path
+from datetime import datetime
+
+path = Path('files', 'dados2', 'teste.txt')
+
+# print(path.stat())
+
+stats = path.stat()
+second_created = stats.st_ctime
+date_created = datetime.fromtimestamp(second_created)
+date_created_str = date_created.strftime('%Y-%m-%d_%H_%M_%S')
+date_created_br = date_created.strftime('Dia: %d-%m-%Y; Hora: %H_%M_%S')
+
+print(date_created_str)
+print(date_created_br)
