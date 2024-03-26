@@ -1,0 +1,13 @@
+1 - Passo
+ - Criar tabela
+
+2 - Passo
+ - Selializar
+
+3 - Passo
+ - Criar endpoint (View)
+
+4 - Passo
+ - Adiconar URL
+
+ Sabe o que é URL?
