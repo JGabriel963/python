@@ -1,6 +1,6 @@
 from typing import List
 from decouple import config
-from pydantic.v1 import AnyHttpUrl, BaseSettings
+from pydantic import AnyHttpUrl, BaseSettings
 
 class Settings(BaseSettings):
     API_V1_STR: str = '/api/v1'
