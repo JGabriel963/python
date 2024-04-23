@@ -1,10 +1,6 @@
 from sqlmodel import SQLModel, create_engine
-from decouple import config
 
-
-# DATABASE_URL = "postgres://python_db_b0nc_user:Utc1YA2V8OZIDLIg7UUPMNGWu6rPTtFW@dpg-cogk34kf7o1s7380uiu0-a.oregon-postgres.render.com/python_db_b0nc"
-
-DATABASE_URL = config('DATABASE_URL')
+DATABASE_URL="postgresql://JGabriel963:Gd3bkE8fyXzc@ep-dawn-cherry-a5ibq6th.us-east-2.aws.neon.tech/my_db?sslmode=require"
 
 engine = create_engine(DATABASE_URL, echo=True)
 
