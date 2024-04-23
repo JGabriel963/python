@@ -10,11 +10,11 @@ from api.dependencies.user_deps import get_current_user
 
 auth_router = APIRouter()
 
-@auth_router.post('/login', summary="Criar Acess Token e Refresh Token", response_model=TokenSchema)
+@auth_router.post('/login', summary="Criar Acess Token e Refresh Token")
 async def login(data: OAuth2PasswordRequestForm = Depends()) -> Any:
     user = await UserService.authenticate(
         email = data.username,
-        password=data.password
+        password= data.password
     )
 
     if not user:

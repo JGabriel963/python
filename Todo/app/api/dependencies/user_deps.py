@@ -30,7 +30,7 @@ async def get_current_user(token: str = Depends(oauth_reusavel)) -> User:
     except JWTError:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="Erro na validação do token",
+            detail=f"Erro na validação do token {token}",
             headers={"WWW-Authenticate": "Bearer"}
         )
     
