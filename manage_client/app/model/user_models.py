@@ -1,5 +1,6 @@
-from sqlmodel import Field, SQLModel, create_engine
+from sqlmodel import Field, SQLModel, Relationship
 from pydantic import BaseModel, EmailStr
+from .task_model import Task
 
 class UserBase(SQLModel):
     username: str = Field(unique=True)
@@ -15,6 +16,8 @@ class User(UserBase, table=True):
     id: int | None = Field(default=None, primary_key=True)
     hashed_password: str
     is_active: bool | None = Field(default=True)
+
+    tasks: list["Task"] = Relationship(back_populates="user")
 
 class UserAuth(SQLModel):
     email: str

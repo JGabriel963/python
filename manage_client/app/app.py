@@ -46,5 +46,6 @@ async def signup(user: UserCreate, session: Session = Depends(get_session)):
 async def read_users_me(current_user: Annotated[User, Depends(get_current_user)]):
     return current_user
 
+
 if __name__ == "__main__":
     uvicorn.run(app=app, host="localhost", port=8000)
