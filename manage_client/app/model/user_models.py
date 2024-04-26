@@ -1,6 +1,8 @@
 from sqlmodel import Field, SQLModel, Relationship
-from pydantic import BaseModel, EmailStr
-from .task_model import Task
+from typing import TYPE_CHECKING, Optional
+
+if TYPE_CHECKING:
+    from .task_model import Task
 
 class UserBase(SQLModel):
     username: str = Field(unique=True)
