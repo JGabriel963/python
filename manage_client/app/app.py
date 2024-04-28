@@ -90,7 +90,14 @@ async def update_task(task_id: int, task: TaskUpdate, current_user: Annotated[Us
 
 @app.delete("/tasks/{task_id}")
 async def delete_task(task_id: int, current_user: Annotated[User, Depends(get_current_user)], session: Session = Depends(get_session)):
-    pass
+    statement = select(Task).where(Task.user_id == current_user.id).where(Task.id == task_id)
+    db_task = session.exec(statement).one()
+    if not db_task:
+        raise HTTPException(status_code=404, detail="Task not found")
+    session.delete(db_task)
+    session.commit()
+    return {"ok": True}
+    
 
 
 if __name__ == "__main__":
