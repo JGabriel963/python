@@ -4,17 +4,11 @@ import customtkinter
 import os
 import time
 
-
 window = customtkinter.CTk()
 window.geometry('800x300')
 window.title("Removedor de Fundo de Imagem")
 
 def remove_bg():
-    # print(input_url.get())
-    # url = input_url.get().replace("'", "").replace('"', "")
-    # image = Image.open(input_url.get())
-    # output = remove(image)
-    # output.save('image2.png')
     filte_path = input_url.get().strip().replace("'", "").replace('"', "")
 
     if not os.path.isfile(filte_path):
@@ -34,7 +28,6 @@ def remove_bg():
         status_label.configure(text="Erro: o arquivo não é uma imagem válida")
     except Exception as e:
         status_label.configure(text="Erro ao processar a imagem: {e}")
-
 
 # Elementos da interface
 text = customtkinter.CTkLabel(window, text="Remova o fundo de suas imagens")
